@@ -1,37 +1,41 @@
-
 import os
 import csv
-
-
-
-input_path=os.path.join('Resources','election_data.csv')
-output_path = os.path.join('output.txt')
-voterId=[]
-candidates=[]
+num_votes = []
+candidate = []
+individualVotes=[]
 representatives=[]
-representativeVotes=[]
 
 
-with open(input_path) as electionfile:
-    csvreader = csv.reader(electionfile, delimiter=",")
-    csvheader=next(csvreader)
-    for row in csvreader:
-        voterId.append(row[0])
-        candidates.append(row[2])
-        representatives=list(set(candidates))
-    print(representatives)
-        
-        
-    print("Total votes :"+str(len(voterId)))
-    print(len(candidates))
+inputfile = os.path.join( "Resources", "election_data.csv")
+	
 
-    representativeVotes=[]
-    
-        
-        #print(len(representatives))
-        #for j in range(len(representatives)):   
-            #print(f"{representative[j]} : {(representativeVotes[j]/len(voterId))*100} ({representativeVotes[j]}) ")
+with open(inputfile, newline='') as myCsvFile:
+    csvReader =  csv.reader(myCsvFile, delimiter=',')
+    next(csvReader)
+    for row in csvReader:
+	    num_votes.append(row[0])
+	    candidate.append(row[2])
+    representatives=list(set(candidate))
+    #print(representatives)
+    print("Election Results")
+    print("--------------------------------------")
+    print(f"Total Votes : {len(num_votes)}")
+    print("--------------------------------------")
 
-  
-winner=representatives(representativeVotes.index(max(representativeVotes)))
-print(f("Winner : {winner}"))
+    for i in representatives:
+        representativevotes=0
+        #print(i)
+        for j in range(len(num_votes)):
+            if(candidate[j]==i):
+                representativevotes=representativevotes+1
+        individualVotes.append(representativevotes)
+    #print(individualVotes)
+    for k in range(len(representatives)):
+        print(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}%   ({individualVotes[k]})")
+    print("--------------------------------------")
+    print(f"Winner: { representatives[individualVotes.index(max(individualVotes))]}")
+
+
+	    
+	
+	    
