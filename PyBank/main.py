@@ -31,13 +31,14 @@ print ("Greatest Decrease in " + (months[revenuechange.index(min(revenuechange))
 
 
 with open(output_path,"w",newline = '') as output_file:
+  
     output_file.write ("Financial Analysis\n")
     output_file.write (".........................\n")
-    output_file.write ("Total number of months "+ str(len(months))+"\n")#Q1
-    output_file.write ("Total profit and loss "+ str(sum(revenue))+"\n")#Q2
-    output_file.write ("Average changes "+ str(averagechange)+"\n")#Q3
-    output_file.write ("Greatest Increase in " + (months[revenuechange.index(max(revenuechange)) +1] + " " + "(" + str(greatestincrease) +")")+"\n")#Q4
-    output_file.write ("Greatest Decrease in " + (months[revenuechange.index(min(revenuechange)) +1] + " " + "(" + str(greatestdecrease)+")")+"\n") #Q5
+    output_file.write ("Total number of months "+ str(len(months))+"\n")
+    output_file.write ("Total profit and loss "+ str(sum(revenue))+"\n")
+    output_file.write ("Average changes "+ str(averagechange)+"\n")
+    output_file.write ("Greatest Increase in " + (months[revenuechange.index(max(revenuechange)) +1] + " " + "(" + str(greatestincrease) +")")+"\n")
+    output_file.write ("Greatest Decrease in " + (months[revenuechange.index(min(revenuechange)) +1] + " " + "(" + str(greatestdecrease)+")")+"\n") 
 
 
 

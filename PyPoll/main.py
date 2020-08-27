@@ -7,6 +7,7 @@ representatives=[]
 
 
 inputfile = os.path.join( "Resources", "election_data.csv")
+output_path = os.path.join('output.txt')
 	
 
 with open(inputfile, newline='') as myCsvFile:
@@ -30,10 +31,22 @@ with open(inputfile, newline='') as myCsvFile:
                 representativevotes=representativevotes+1
         individualVotes.append(representativevotes)
     #print(individualVotes)
+    #for k in range(len(representatives)):
+        #print(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}%   ({individualVotes[k]})")
+    #print("--------------------------------------")
+    #print(f"Winner: { representatives[individualVotes.index(max(individualVotes))]}")
+
+with open(output_path,"w",newline = '') as output_file:
+    output_file.write("Election Results\n")
+    output_file.write("--------------------------------------\n")
+    output_file.write(f"Total Votes : {len(num_votes)}\n")
     for k in range(len(representatives)):
         print(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}%   ({individualVotes[k]})")
+        output_file.write(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}%   ({individualVotes[k]})\n")
     print("--------------------------------------")
+    output_file.write("--------------------------------------\n")
     print(f"Winner: { representatives[individualVotes.index(max(individualVotes))]}")
+    output_file.write(f"Winner: { representatives[individualVotes.index(max(individualVotes))]}")
 
 
 	    
