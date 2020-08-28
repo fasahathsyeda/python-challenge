@@ -38,7 +38,7 @@ with open(inputfile, newline='') as myCsvFile:
 
 with open(output_path,"w",newline = '') as output_file:
     output_file.write("Election Results\n")
-    output_file.write("--------------------------------------\n")
+    output_file.write("-------------------------------------\n")
     output_file.write(f"Total Votes : {len(num_votes)}\n")
     for k in range(len(representatives)):
         print(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}%   ({individualVotes[k]})")
