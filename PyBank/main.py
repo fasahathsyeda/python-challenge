@@ -21,25 +21,24 @@ with open(bank_csv) as csvfile:
             averagechange=sum(revenuechange)/len(revenuechange)
             greatestincrease = max(revenuechange)
             greatestdecrease= min(revenuechange)
-print ("Financial Analysis")
-print (".........................")
-print ("Total number of months "+ str(len(months)))#Q1
-print ("Total profit and loss "+ str(sum(revenue)))#Q2
-print ("Average changes "+ str(averagechange))#Q3
-print ("Greatest Increase in " + (months[revenuechange.index(max(revenuechange)) +1] + " " + "(" + str(greatestincrease) +")"))#Q4
-print ("Greatest Decrease in " + (months[revenuechange.index(min(revenuechange)) +1] + " " + "(" + str(greatestdecrease)+")")) #Q5
 
 
 with open(output_path,"w",newline = '') as output_file:
   
     output_file.write ("Financial Analysis\n")
+    print("Financial analysis")
     output_file.write (".........................\n")
+    print (".........................")
     output_file.write ("Total number of months "+ str(len(months))+"\n")
+    print ("Total number of months "+ str(len(months)))
     output_file.write ("Total profit and loss "+ str(sum(revenue))+"\n")
+    print ("Total profit and loss "+ str(sum(revenue)))
     output_file.write ("Average changes "+ str(averagechange)+"\n")
+    print ("Average changes "+ str(averagechange))
     output_file.write ("Greatest Increase in " + (months[revenuechange.index(max(revenuechange)) +1] + " " + "(" + str(greatestincrease) +")")+"\n")
+    print ("Greatest Increase in " + (months[revenuechange.index(max(revenuechange)) +1] + " " + "(" + str(greatestincrease) +")"))
     output_file.write ("Greatest Decrease in " + (months[revenuechange.index(min(revenuechange)) +1] + " " + "(" + str(greatestdecrease)+")")+"\n") 
-
+    print ("Greatest Decrease in " + (months[revenuechange.index(min(revenuechange)) +1] + " " + "(" + str(greatestdecrease)+")"))
 
 
 
