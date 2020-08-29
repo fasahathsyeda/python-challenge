@@ -4,6 +4,7 @@ num_votes = []
 candidate = []
 individualVotes=[]
 representatives=[]
+cand=[]
 
 
 inputfile = os.path.join( "Resources", "election_data.csv")
@@ -14,9 +15,12 @@ with open(inputfile, newline='') as myCsvFile:
     csvReader =  csv.reader(myCsvFile, delimiter=',')
     next(csvReader)
     for row in csvReader:
-	    num_votes.append(row[0])
-	    candidate.append(row[2])
-    representatives=list(set(candidate))
+        num_votes.append(row[0])
+        candidate.append(row[2])
+        if row[2] not in representatives:
+            representatives.append(row[2])
+    print(representatives)
+    #representatives=list(set(candidate))
    
     
 
