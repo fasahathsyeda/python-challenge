@@ -44,8 +44,8 @@ with open(output_path,"w",newline = '') as output_file:
     print("--------------------------------------")
 
     for k in range(len(representatives)):
-        print(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}%   ({individualVotes[k]})")
-        output_file.write(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}%   ({individualVotes[k]})\n")
+        print(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}   ({individualVotes[k]})")
+        output_file.write(f"{representatives[k]} : {individualVotes[k]/len(num_votes):.3%}  ({individualVotes[k]})\n")
     print("--------------------------------------")
     output_file.write("--------------------------------------\n")
     print(f"Winner: { representatives[individualVotes.index(max(individualVotes))]}")
